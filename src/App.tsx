@@ -1,19 +1,29 @@
 import * as React from 'react';
-import './App.css';
-import logo from './logo.svg';
+import { Link, Route, Switch } from 'react-router-dom';
+
+const Index = () => {
+    return <h2>Home</h2>;
+};
+
+const About = () => {
+    return <h2>About</h2>;
+};
+
+const Error404 = () => {
+    return <h2>Page not found</h2>;
+};
 
 const App: React.FC = () => {
     return (
         <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-                    Learn React
-                </a>
-            </header>
+            <Link to="/">Index</Link><br />
+            <Link to="/about">About</Link><br />
+            <Link to="/test">Test</Link>
+            <Switch>
+                <Route path="/" exact component={Index}/>
+                <Route path="/about" exact component={About}/>
+                <Route component={Error404}/>
+            </Switch>
         </div>
     );
 };
