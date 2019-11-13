@@ -1,5 +1,5 @@
 {
-  "name": "tiyo-new",
+  "name": "react-redux-router-typescript",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,9 +7,16 @@
     "@types/node": "12.12.7",
     "@types/react": "16.9.11",
     "@types/react-dom": "16.9.4",
+    "@types/react-redux": "^7.1.5",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-redux": "^7.1.3",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
+    "redux": "^4.0.4",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
     "typescript": "3.7.2"
   },
   "scripts": {
