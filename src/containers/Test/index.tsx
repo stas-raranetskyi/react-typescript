@@ -1,20 +1,16 @@
-import * as React from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import Test from '../../components/Test';
 import { AppState } from '../../store';
 import { testAction } from '../../store/options/actions';
 import { IProps } from './models';
 
-class TestContainer extends React.Component<IProps> {
+const TestContainer: React.FC<IProps> = (props) => {
 
-    public componentDidMount() {
-        this.props.testAction('test value from redux');
-    }
+    props.testAction('test value from redux');
 
-    public render() {
-        return <Test test={this.props.test}/>;
-    }
-}
+    return <Test test={props.test}/>;
+};
 
 const mapStateToProps = (state: AppState) => ({
     test: state.options.test,

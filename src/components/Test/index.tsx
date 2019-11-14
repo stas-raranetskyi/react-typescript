@@ -1,11 +1,15 @@
-import * as React from 'react';
+import React, {useEffect, useState} from 'react';
 import { IProps } from './models';
 import { useStyles } from './styles';
 
 const TestComponent: React.FC<IProps> = (props) => {
 
-    const [value] = React.useState(0);
+    const [value, setValue] = useState<number>(0);
     const classes = useStyles();
+
+    useEffect(() => {
+        setValue(1);
+    }, []);
 
     return(
         <div className={classes.testClassName}>
