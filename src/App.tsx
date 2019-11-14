@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
+import Test from './containers/Test';
 
 const Index = () => {
     return <h2>Home</h2>;
@@ -24,6 +25,7 @@ const App: React.FC = () => {
                 <Route path="/about" exact component={About}/>
                 <Route component={Error404}/>
             </Switch>
+            <Test />
         </div>
     );
 };
