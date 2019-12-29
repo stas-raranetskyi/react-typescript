@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { IProps } from './models';
+import { IProps } from './types';
 import { useStyles } from './styles';
 
 const TestComponent: React.FC<IProps> = (props) => {

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Test from '../../components/Test';
 import { AppState } from '../../store';
 import { testAction } from '../../store/options/actions';
-import { IProps } from './models';
+import { IProps } from './types';
 
 const TestContainer: React.FC<IProps> = (props) => {
 

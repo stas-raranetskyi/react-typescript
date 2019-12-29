@@ -1,5 +1,5 @@
-import { IAction } from '../models';
-import { IState } from './models';
+import { IAction } from '../types';
+import { IState } from './types';
 import { TEST_ACTION } from './types';
 
 const initialState: IState = {
