@@ -4,7 +4,7 @@ import { ThunkDispatch } from 'redux-thunk';
 import options from './options/reducer';
 
 const rootReducer = combineReducers({
-    options,
+	options,
 });
 
 export type AppState = ReturnType<typeof rootReducer>;
