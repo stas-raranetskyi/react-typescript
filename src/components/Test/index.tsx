@@ -1,3 +1,4 @@
+import clsx from 'helpers/clsx';
 import React, {useEffect, useState} from 'react';
 import classes from './Test.module.scss';
 import { IProps } from './types';
@@ -11,7 +12,7 @@ const TestComponent: React.FC<IProps> = (props) => {
 	}, []);
 
 	return(
-		<div className={classes.testClassName}>
+		<div className={clsx(classes.testClassName)}>
 			Test value state: {value} <br/>
 			Test value props: {props.test} <br/>
 		</div>
