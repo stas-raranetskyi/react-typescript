@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import AppContextProvider from 'contexts/App';
 import thunk from 'redux-thunk';
 import App from './App';
 import './index.css';
@@ -17,7 +18,7 @@ const store = createStore(reducers, composeWithDevTools(
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>
-            <App />
+            <AppContextProvider><App /></AppContextProvider>
         </BrowserRouter>
     </Provider>,
     document.getElementById('root'),

@@ -1,23 +1,19 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import Test from '../../components/Test';
-import { AppState } from '../../store';
-import { testAction } from '../../store/options/actions';
-import { IProps } from './types';
+import React, { useEffect } from 'react';
+import Test from 'components/Test';
+import { useSelector } from 'store';
+import { useDispatch } from 'react-redux';
+import { testAction } from 'store/options/actions';
 
-const TestContainer: React.FC<IProps> = (props) => {
+const TestContainer: React.FC = () => {
 
-    props.testAction('test value from redux');
+    const { test } = useSelector((state) => state.options);
+    const dispatch = useDispatch();
 
-    return <Test test={props.test}/>;
+    useEffect(() => {
+        dispatch(testAction('test value from redux'));
+    }, [dispatch]);
+
+    return <Test test={test}/>;
 };
 
-const mapStateToProps = (state: AppState) => ({
-    test: state.options.test,
-});
-
-const mapDispatchToProps = {
-    testAction,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(TestContainer);
+export default TestContainer;

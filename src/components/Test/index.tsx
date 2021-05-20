@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import { IProps } from './types';
-import { useStyles } from './styles';
+import classes from './Test.module.scss';
 
 const TestComponent: React.FC<IProps> = (props) => {
 
     const [value, setValue] = useState<number>(0);
-    const classes = useStyles();
 
     useEffect(() => {
         setValue(1);

@@ -6,7 +6,7 @@ const initialState: IState = {
     test: '',
 };
 
-export default (state = initialState, action: IAction): IState => {
+const reducer = (state = initialState, action: IAction): IState => {
     switch (action.type) {
         case TEST_ACTION:
             return {
@@ -17,3 +17,5 @@ export default (state = initialState, action: IAction): IState => {
             return state;
     }
 };
+
+export default reducer;
