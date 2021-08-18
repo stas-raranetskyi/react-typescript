@@ -1,4 +1,5 @@
+@import 'static/styles/_theme';
 
 .testClassName {
-    color: red;
+    color: $colorPrimary;
 }

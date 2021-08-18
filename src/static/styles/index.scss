@@ -1,0 +1,12 @@
+@import 'static/styles/_theme.scss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+body {
+	margin: 0;
+	color: $colorPrimary;
+	position: relative;
+}
+
+body, input, textarea, button {
+	font-family: 'Montserrat', sans-serif;
+}
