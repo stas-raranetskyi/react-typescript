@@ -1,34 +1,17 @@
 import React, { useMemo } from 'react';
 
-interface IOptions {
-	defaultMatches?: boolean;
-	noSsr?: boolean;
-	ssrMatchMedia?(query: string): {matches: boolean};
-}
-
-export const useMediaQuery = (queryInput: string, options: IOptions = {}): boolean => {
+export const useMediaQuery = (queryInput: string): boolean => {
 
 	const query = queryInput.replace(/^@media( ?)/m, '');
 	const supportMatchMedia = typeof window !== 'undefined' && typeof window.matchMedia !== 'undefined';
-	const matchMedia = useMemo(() => supportMatchMedia ? window.matchMedia : () => ({matches: false}), [supportMatchMedia]);
+	const matchMedia = useMemo(() => supportMatchMedia ? window.matchMedia : () => ({ matches: false } as MediaQueryList), [supportMatchMedia]);
 
-	const {
-		defaultMatches = false,
-		noSsr = false,
-		ssrMatchMedia = () => ({matches: false}),
-	} = {
-		...options,
-	};
-
-	const [match, setMatch] = React.useState(() => {
-		if (noSsr && supportMatchMedia) {
+	const [match, setMatch] = React.useState<boolean>(() => {
+		if (supportMatchMedia) {
 			return matchMedia(query).matches;
 		}
-		if (ssrMatchMedia) {
-			return ssrMatchMedia(query).matches;
-		}
 
-		return defaultMatches;
+		return false;
 	});
 
 	React.useEffect(() => {
@@ -36,7 +19,7 @@ export const useMediaQuery = (queryInput: string, options: IOptions = {}): boole
 		if (!supportMatchMedia) {
 			return undefined;
 		}
-		const queryList: any = matchMedia(query);
+		const queryList: MediaQueryList = matchMedia(query);
 		const updateMatch = () => {
 			if (active) {
 				setMatch(queryList.matches);

@@ -1,4 +1,5 @@
 import { breakPoints } from 'const';
+
 import { useMediaQuery } from './useMediaQuery';
 
 const useDeviceType = () => {

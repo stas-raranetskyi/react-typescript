@@ -12,8 +12,8 @@ const App: React.FC = () => {
 			<Link to="/about">About</Link><br />
 			<Link to="/test">Test</Link>
 			<Switch>
-				<Route path="/" exact component={Home}/>
-				<Route path="/about" exact component={About}/>
+				<Route path="/" component={Home}/>
+				<Route exact path="/about" component={About}/>
 				<Route component={NotFound}/>
 			</Switch>
 			<Test />

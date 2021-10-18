@@ -1,5 +1,6 @@
 import useDeviceType from 'hooks/useDeviceType';
 import React, { useContext } from 'react';
+
 import { IAppContext } from './types';
 
 export const AppContext: any = React.createContext({});
