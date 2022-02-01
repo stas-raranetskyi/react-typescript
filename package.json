@@ -40,7 +40,7 @@
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-	"cross-env": "^7.0.0",
+	"cross-env": "^7.0.3",
     "pre-commit": "^1.2.2"
   },
   "scripts": {
