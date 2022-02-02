@@ -1,16 +1,20 @@
-import { TypedUseSelectorHook, useSelector as useReduxSelector } from 'react-redux';
-import { AnyAction, combineReducers } from 'redux';
-import { ThunkDispatch } from 'redux-thunk';
+import {combineReducers, configureStore} from '@reduxjs/toolkit';
 
-import options from './options/reducer';
+import options from './reducers/options';
+import users from './reducers/users';
 
 const rootReducer = combineReducers({
+	users,
 	options,
 });
 
-export type AppState = ReturnType<typeof rootReducer>;
+export const setupStore = () => {
+	return configureStore({
+		reducer: rootReducer,
+	});
+};
 
-export const useSelector: TypedUseSelectorHook<AppState> = useReduxSelector;
-export type AppDispatch = ThunkDispatch<typeof rootReducer, any, AnyAction>;
+export type RootState = ReturnType<typeof rootReducer>;
+export type AppStore = ReturnType<typeof setupStore>;
+export type AppDispatch = AppStore['dispatch'];
 
-export default rootReducer;
