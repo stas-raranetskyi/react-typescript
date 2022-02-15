@@ -10,5 +10,5 @@ export const fetchUsers = createAsyncThunk(
 		} catch (e) {
 			return thunkAPI.rejectWithValue('Failure');
 		}
-	}
+	},
 );
