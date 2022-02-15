@@ -8,6 +8,7 @@ const Users: React.FC = () => {
 
 	useEffect(() => {
 		dispatch(fetchUsers());
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (

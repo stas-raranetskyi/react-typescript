@@ -1,4 +1,4 @@
-## react/redux/react-router/react-jss/typescript
+## react/typescript/redux@toolkit/react-router/scss
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

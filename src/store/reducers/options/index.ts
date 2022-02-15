@@ -17,7 +17,7 @@ export const optionsSlice = createSlice({
 		},
 		setCount(state, action: PayloadAction<number>) {
 			state.count = action.payload;
-		}
+		},
 	},
 });
 
