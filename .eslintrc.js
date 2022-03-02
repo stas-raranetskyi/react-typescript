@@ -12,7 +12,7 @@ module.exports = {
 		'react/jsx-sort-props': ['error', {'shorthandFirst': true, 'noSortAlphabetically': true}],
 		'simple-import-sort/imports': 'warn',
 		'comma-dangle': ['error', 'always-multiline'],
-		'indent': ['error', 'tab'],
+		'indent': ['error', 'tab', { SwitchCase: 1 }],
 		'spaced-comment': [
 			'error',
 			'always',
