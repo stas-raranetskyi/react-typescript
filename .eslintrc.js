@@ -20,6 +20,7 @@ module.exports = {
 		],
 		'no-trailing-spaces': 'error',
 		semi: ['error', 'always'],
+		'no-shadow': ['error', { 'builtinGlobals': false, 'hoist': 'functions', 'allow': [], 'ignoreOnInitialization': false }],
 	},
 	plugins: [
 		'simple-import-sort',
