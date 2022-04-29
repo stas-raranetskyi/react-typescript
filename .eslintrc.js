@@ -21,6 +21,7 @@ module.exports = {
 		'no-trailing-spaces': 'error',
 		semi: ['error', 'always'],
 		'no-shadow': ['error', { 'builtinGlobals': false, 'hoist': 'functions', 'allow': [], 'ignoreOnInitialization': false }],
+		'jsx-quotes': ['error', 'prefer-double'],
 	},
 	plugins: [
 		'simple-import-sort',
