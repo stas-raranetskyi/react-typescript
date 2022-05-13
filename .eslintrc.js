@@ -20,7 +20,8 @@ module.exports = {
 		],
 		'no-trailing-spaces': 'error',
 		semi: ['error', 'always'],
-		'no-shadow': ['error', { 'builtinGlobals': false, 'hoist': 'functions', 'allow': [], 'ignoreOnInitialization': false }],
+		'no-shadow': 'off',
+		'@typescript-eslint/no-shadow': ['error'],
 		'jsx-quotes': ['error', 'prefer-double'],
 	},
 	plugins: [
