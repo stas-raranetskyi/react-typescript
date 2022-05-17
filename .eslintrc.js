@@ -23,6 +23,7 @@ module.exports = {
 		'no-shadow': 'off',
 		'@typescript-eslint/no-shadow': ['error'],
 		'jsx-quotes': ['error', 'prefer-double'],
+		'arrow-parens': ['warn', 'always'],
 	},
 	plugins: [
 		'simple-import-sort',
