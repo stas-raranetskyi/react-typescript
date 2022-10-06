@@ -10,9 +10,8 @@ module.exports = {
 		'plugin:import/warnings',
 		'plugin:import/typescript',
 		'google',
-		'plugin:prettier/recommended',
 		'prettier',
-		'plugin:react/jsx-runtime',
+		'plugin:prettier/recommended',
 	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
@@ -54,16 +53,15 @@ module.exports = {
 		'jsx-quotes': ['error', 'prefer-double'],
 		'arrow-parens': ['warn', 'always'],
 		'no-console': 'warn',
+		'@typescript-eslint/no-var-requires': 'off',
+		'import/no-unresolved': 'off',
+		'no-unused-vars': 'off',
+		'@typescript-eslint/no-unused-vars': 'warn',
 	},
 	settings: {
-		'import/parsers': {
-			'@typescript-eslint/parser': ['.ts', '.tsx'],
-		},
 		'import/resolver': {
-			typescript: {
-				alwaysTryTypes: true,
-				project: './tsconfig.json',
-			},
+			typescript: {},
+			node: {},
 		},
 		react: {
 			version: 'detect',
