@@ -53,6 +53,7 @@ module.exports = {
 		'@typescript-eslint/no-shadow': ['error'],
 		'jsx-quotes': ['error', 'prefer-double'],
 		'arrow-parens': ['warn', 'always'],
+		'no-console': 'warn',
 	},
 	settings: {
 		'import/resolver': {
