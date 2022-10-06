@@ -24,7 +24,7 @@ module.exports = {
 	},
 	plugins: ['react', '@typescript-eslint', 'simple-import-sort', 'prettier'],
 	rules: {
-		'prettier/prettier': 'error',
+		quotes: ['error', 'single'],
 		'require-jsdoc': 'off',
 		'@typescript-eslint/ban-ts-comment': 'off',
 		'@typescript-eslint/ban-types': 'off',
@@ -45,7 +45,7 @@ module.exports = {
 			},
 		],
 		indent: 'off',
-		'@typescript-eslint/indent': ['error', 'tab', { SwitchCase: 1 }],
+		'@typescript-eslint/indent': 'off',
 		'spaced-comment': ['error', 'always', { markers: ['/'] }],
 		'no-trailing-spaces': 'error',
 		semi: ['error', 'always'],
@@ -56,15 +56,17 @@ module.exports = {
 		'no-console': 'warn',
 	},
 	settings: {
+		'import/parsers': {
+			'@typescript-eslint/parser': ['.ts', '.tsx'],
+		},
 		'import/resolver': {
-			typescript: {},
+			typescript: {
+				alwaysTryTypes: true,
+				project: './tsconfig.json',
+			},
 		},
 		react: {
-			createClass: 'createReactClass',
-			pragma: 'React',
-			fragment: 'Fragment',
 			version: 'detect',
-			flowVersion: '0.53',
 		},
 	},
 };
