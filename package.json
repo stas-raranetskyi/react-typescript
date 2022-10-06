@@ -58,7 +58,7 @@
   },
   "pre-commit": [
     "test:ci",
-    "lint:fix"
+    "lint"
   ],
   "browserslist": {
     "production": [
