@@ -1,12 +1,11 @@
-import React, { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 export const useMediaQuery = (queryInput: string): boolean => {
-
 	const query = queryInput.replace(/^@media( ?)/m, '');
 	const supportMatchMedia = typeof window !== 'undefined' && typeof window.matchMedia !== 'undefined';
-	const matchMedia = useMemo(() => supportMatchMedia ? window.matchMedia : () => ({ matches: false } as MediaQueryList), [supportMatchMedia]);
+	const matchMedia = useMemo(() => (supportMatchMedia ? window.matchMedia : () => ({ matches: false } as MediaQueryList)), [supportMatchMedia]);
 
-	const [match, setMatch] = React.useState<boolean>(() => {
+	const [match, setMatch] = useState<boolean>(() => {
 		if (supportMatchMedia) {
 			return matchMedia(query).matches;
 		}
@@ -14,7 +13,7 @@ export const useMediaQuery = (queryInput: string): boolean => {
 		return false;
 	});
 
-	React.useEffect(() => {
+	useEffect(() => {
 		let active = true;
 		if (!supportMatchMedia) {
 			return undefined;

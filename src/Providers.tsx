@@ -9,13 +9,11 @@ import { setupStore } from './store';
 
 const store = setupStore();
 
-const Providers: React.FC<{ children?: React.ReactNode; }> = ({ children }) => {
+const Providers: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
 	return (
 		<Provider store={store}>
 			<BrowserRouter>
-				<AppContextProvider>
-					{children}
-				</AppContextProvider>
+				<AppContextProvider>{children}</AppContextProvider>
 			</BrowserRouter>
 		</Provider>
 	);

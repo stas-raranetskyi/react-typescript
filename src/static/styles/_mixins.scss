@@ -1,1 +1,7 @@
-@import './theme';
+@mixin marginWithoutFirstChild($margin, $property: top) {
+	margin-#{$property}: #{$margin}px;
+
+	&:first-child {
+		margin-#{$property}: 0;
+	}
+}

@@ -14,13 +14,15 @@ const App: React.FC = () => {
 	return (
 		<Providers>
 			<div className="App">
-				<Link to="/">Home</Link><br />
-				<Link to="/about">{t('about')}</Link><br />
+				<Link to="/">Home</Link>
+				<br />
+				<Link to="/about">{t('about')}</Link>
+				<br />
 				<Link to="/test">Test</Link>
 				<Routes>
-					<Route path="/" element={<Home />}/>
-					<Route path="/about" element={<About/>}/>
-					<Route element={<NotFound/>}/>
+					<Route path="/" element={<Home />} />
+					<Route path="/about" element={<About />} />
+					<Route element={<NotFound />} />
 				</Routes>
 				<TestComponent test={'test prop'} />
 				<Counter />

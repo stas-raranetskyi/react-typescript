@@ -8,15 +8,18 @@ const Users: React.FC = () => {
 
 	useEffect(() => {
 		dispatch(fetchUsers());
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (
 		<div>
-			{loading ? 'Loading users...' : (
+			{loading ? (
+				'Loading users...'
+			) : (
 				<>
 					Users:
-					{users.map(({id, name}) => <div key={id}>{name}</div>)}
+					{users.map(({ id, name }) => (
+						<div key={id}>{name}</div>
+					))}
 				</>
 			)}
 		</div>

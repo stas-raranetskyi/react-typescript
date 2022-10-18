@@ -4,11 +4,11 @@ type TOptions = {
 	[key: string]: boolean;
 };
 
-function toVal(mix: number|string|object) {
+function toVal(mix: number | string | object) {
 	let key: string;
 	let k: number;
 	let y: string;
-	let str='';
+	let str = '';
 
 	if (typeof mix === 'string' || typeof mix === 'number') {
 		str += mix;
@@ -38,7 +38,7 @@ function toVal(mix: number|string|object) {
 	return str;
 }
 
-export default function clsx(...args: any[]): string {
+export default function clsx(...args: (object | string)[]): string {
 	let i = 0;
 	let tmp: number | string | object;
 	let x;

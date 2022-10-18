@@ -28,7 +28,7 @@ export const usersSlice = createSlice({
 		[fetchUsers.pending.type]: (state) => {
 			state.loading = true;
 		},
-		[fetchUsers.rejected.type]: (state,  action: PayloadAction<string>) => {
+		[fetchUsers.rejected.type]: (state, action: PayloadAction<string>) => {
 			state.loading = false;
 			state.error = action.payload;
 		},
